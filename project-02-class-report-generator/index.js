@@ -51,14 +51,19 @@ studentsData.forEach(function (studentsInfo) {
     2
   )}% | Grade: ${grade}\n`;
 });
+const result = `
+--------------------------------------------
+           CLASS REPORT - AUG 2025
+--------------------------------------------
 
-console.log(studentInformation);
-console.log(`
-  --------------------------------------------
+Individual Performance:
+${studentInformation}
+--------------------------------------------
 Class Summary:
-- Class Average Percentage: ${averagePercentage}%
+- Class Average Percentage: ${averagePercentage.toFixed(2)}%
 - Top Performer: ${topper}
 - Students Below 70%: ${below70Students}
 - Students with Low Attendance (<75%): ${greater75Attendence}
---------------------------------------------`);
-// Just a new line
+--------------------------------------------`;
+
+fs.writeFileSync("output.txt", result, "utf-8");
