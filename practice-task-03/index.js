@@ -3,6 +3,10 @@ const fs = require("fs");
 const data = fs.readFileSync("./marketData.json", "utf8");
 const marketData = JSON.parse(data);
 
+const appendText = function (text) {
+  fs.appendFileSync("output.txt", text, "utf-8");
+};
+
 let clickThroughRate = 0;
 let conversionsRate = 0;
 let returnOnInvestment = 0;
@@ -43,16 +47,22 @@ marketData.forEach(function (campeignData) {
   getBestPerforming(revenue, campaignName);
   getNeddingOptimize(revenue, campaignName);
 
-  console.log("CTR", ":", clickThroughRate.toFixed(2) + "%");
-  console.log("Conversion Rate", ":", conversionsRate.toFixed(2) + "%");
-  console.log("ROI Rate", ":", returnOnInvestment.toFixed(2) + "%");
-  console.log(
-    parRevenue.toLocaleString("en-IN"),
-    parCost.toLocaleString("en-IN")
-  );
+  appendText(`
+${id}. ${campaignName}
+   - CTR: ${clickThroughRate.toFixed(2)}%
+   - Conversion Rate: ${conversionsRate.toFixed(2)}%
+   - ROI: ${returnOnInvestment}%
+   - Revenue: ₹${parRevenue} | Cost: ₹${parCost}
+
+`);
 });
-console.log(" ₹", overAllSpend.toLocaleString("en-IN"));
-console.log(" ₹", totalRevenue.toLocaleString("en-IN"));
-console.log(overAllROI.toFixed(2) + "%");
-console.log(bestPerformingCampeginName);
-console.log(neddingOptimizeCampeignName);
+appendText(`
+---------------------------------------------------
+Overall Summary:
+- Total Spend: ₹${overAllSpend.toLocaleString()}
+- Total Revenue: ₹${totalRevenue.toLocaleString()}
+- Overall ROI: ${overAllROI.toFixed(2)}%
+- Best Performing Campaign: ${bestPerformingCampeginName}
+- Campaign Needing Optimization: ${neddingOptimizeCampeignName}
+---------------------------------------------------
+`);
