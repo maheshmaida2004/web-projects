@@ -3,6 +3,10 @@ const { parse } = require("path");
 let data = fs.readFileSync("./data.json", "utf8");
 let employesData = JSON.parse(data);
 
+function appendtext(data) {
+  fs.appendFileSync("output.txt", data, "utf-8");
+}
+
 let totalEmploye = 0;
 let totalSalary = 0;
 let averageSalary = 0;
@@ -32,7 +36,10 @@ function getStrDepartment(departmentSummary) {
     const information = departmentSummary[department];
     const { count, salaryPerDepartment } = information;
     const avgPerDepartment = salaryPerDepartment / count;
-    console.log(`${department}, ${count},"employee",${avgPerDepartment}`);
+
+    appendtext(
+      `${department}: ${count}employees, Avg Salary ₹${avgPerDepartment}\n`
+    );
   }
 }
 
@@ -47,12 +54,18 @@ function getSortedExperiance(employesData) {
   });
   sortedData.forEach(function (emp, i) {
     const { name, experience } = emp;
-    console.log(`${i + 1}. ${name} (${experience} years)`);
+    appendtext(`${i + 1}. ${name} (${experience} years)\n`);
   });
 }
-console.log(totalEmploye);
-console.log(averageSalary.toLocaleString());
-console.log(higestPaidEmployeName, higestPaidEmployeSalary);
-
+appendtext(`
+    -----------------------------------------
+       EMPLOYEE ANALYTICS DASHBOARD
+-----------------------------------------
+Total Employees: ${totalEmploye}
+Average Salary: ₹${averageSalary.toLocaleString()}
+Highest Paid Employee: ${higestPaidEmployeName}
+ (₹${higestPaidEmployeSalary.toLocaleString()})
+ 
+ `);
 getStrDepartment(departmentSummary);
 getSortedExperiance(employesData);
