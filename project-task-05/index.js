@@ -24,6 +24,8 @@ let cleanStr = strSentence
   .join(" ");
 const wordCount = cleanStr.split(" ").length;
 const uniqueWordCount = new Set(cleanStr.split(" ")).size;
+const totalCharacters = cleanStr.replaceAll(" ", "").length;
+const includesJavaScript = cleanStr.includes("JavaScript");
 const sentenceCase = cleanStr
   .split("")
   .map(function (ch, i) {
@@ -46,7 +48,25 @@ const titleCase = cleanStr
   })
   .join(" ");
 
-console.log(wordCount);
-console.log(uniqueWordCount);
-console.log(sentenceCase);
-console.log(titleCase);
+console.log(`
+
+-----------------------------------------
+        TEXT FORMATTER & ANALYZER
+-----------------------------------------
+Original Text:
+"    Welcome  to  the   JavaScript   World!!!   Learn,   Code, Code    Build.  "
+
+Cleaned Text:
+${cleanStr}
+
+Statistics:
+- Total Words: ${wordCount}
+- Unique Words: ${uniqueWordCount}
+- Total Characters (No Spaces): ${totalCharacters}
+- Does it include 'JavaScript'? ${includesJavaScript}
+- Sentence Case: ${sentenceCase}
+- Title Case: ${titleCase}
+-----------------------------------------
+
+*/
+----------------------------------------`);
