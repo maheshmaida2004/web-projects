@@ -1,0 +1,154 @@
+
+
+  -----------------------------------------
+       MOVIE RECOMMENDATION ENGINE
+-----------------------------------------
+Search: Sci-Fi
+
+Results:
+- Inception (2010) - 8.8
+- Interstellar (2014) - 8.6
+Top Picks by Genre:
+- Sci-Fi:Interstellar (8.6)
+
+- Action:The Dark Knight (9)
+
+- Drama:The Prestige (8.5)
+
+- Mystery:The Prestige (8.5)
+
+
+  -----------------------------------------
+       MOVIE RECOMMENDATION ENGINE
+-----------------------------------------
+Search: Sci-Fi
+
+Results:
+- Inception (2010) - 8.8
+- Interstellar (2014) - 8.6
+Top Picks by Genre:- Sci-Fi:Interstellar (8.6)
+- Action:The Dark Knight (9)
+- Drama:The Prestige (8.5)
+- Mystery:The Prestige (8.5)
+
+
+  -----------------------------------------
+       MOVIE RECOMMENDATION ENGINE
+-----------------------------------------
+Search: Sci-Fi
+
+Results:
+- Inception (2010) - 8.8
+- Interstellar (2014) - 8.6
+Top Picks by Genre:
+  - Sci-Fi:Interstellar (8.6)
+- Action:The Dark Knight (9)
+- Drama:The Prestige (8.5)
+- Mystery:The Prestige (8.5)
+
+
+  -----------------------------------------
+       MOVIE RECOMMENDATION ENGINE
+-----------------------------------------
+Search: Sci-Fi
+
+Results:
+- Inception (2010) - 8.8
+- Interstellar (2014) - 8.6
+
+  
+  
+  Top Picks by Genre:
+- Sci-Fi:Interstellar (8.6)
+- Action:The Dark Knight (9)
+- Drama:The Prestige (8.5)
+- Mystery:The Prestige (8.5)
+
+
+  -----------------------------------------
+       MOVIE RECOMMENDATION ENGINE
+-----------------------------------------
+Search: Sci-Fi
+
+Results:
+- Inception (2010) - 8.8
+- Interstellar (2014) - 8.6
+
+  
+  Top Picks by Genre:
+- Sci-Fi:Interstellar (8.6)
+- Action:The Dark Knight (9)
+- Drama:The Prestige (8.5)
+- Mystery:The Prestige (8.5)
+
+
+  -----------------------------------------
+       MOVIE RECOMMENDATION ENGINE
+-----------------------------------------
+Search: Sci-Fi
+
+Results:
+- Inception (2010) - 8.8
+- Interstellar (2014) - 8.6
+
+Top Picks by Genre:
+- Sci-Fi:Interstellar (8.6)
+- Action:The Dark Knight (9)
+- Drama:The Prestige (8.5)
+- Mystery:The Prestige (8.5)
+
+
+  -----------------------------------------
+       MOVIE RECOMMENDATION ENGINE
+-----------------------------------------
+Search: Sci-Fi
+
+Results:
+- Inception (2010) - 8.8
+- Interstellar (2014) - 8.6
+
+Top Picks by Genre:
+
+
+  -----------------------------------------
+       MOVIE RECOMMENDATION ENGINE
+-----------------------------------------
+Search: Sci-Fi
+
+Results:
+- Inception (2010) - 8.8
+- Interstellar (2014) - 8.6
+
+Top Picks by Genre:
+
+
+  -----------------------------------------
+       MOVIE RECOMMENDATION ENGINE
+-----------------------------------------
+Search: Sci-Fi
+
+Results:
+- Inception (2010) - 8.8
+- Interstellar (2014) - 8.6
+
+Top Picks by Genre:
+- Sci-Fi:Interstellar (8.6)
+- Action:The Dark Knight (9)
+- Drama:The Prestige (8.5)
+- Mystery:The Prestige (8.5)
+
+
+  -----------------------------------------
+       MOVIE RECOMMENDATION ENGINE
+-----------------------------------------
+Search: Sci-Fi
+
+Results:
+- Inception (2010) - 8.8
+- Interstellar (2014) - 8.6
+
+Top Picks by Genre:
+- Sci-Fi:Inception (8.8)
+- Action:The Dark Knight (9)
+- Drama:The Dark Knight (9)
+- Mystery:The Prestige (8.5)

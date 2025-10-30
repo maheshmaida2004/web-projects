@@ -1,34 +1,53 @@
 const fs = require("fs");
-const jsonData = fs.readFileSync("./data.json", "utf-8");
-const data = JSON.parse(jsonData);
-let search = "Sci-Fi";
-let searchMovieName = "";
-let result = [];
+const { title } = require("process");
 
-data.forEach(function (list) {
-  const { genre, title, rating, year } = list;
+const data = fs.readFileSync("./data.json", "utf8");
+const moviesData = JSON.parse(data);
 
+const inputStr = process.argv.slice(2).at(0).toLocaleLowerCase();
+let movieName = "";
+let resultsName = [];
+let topPicksByGenre = {};
+function appendtext(data) {
+  fs.appendFileSync("output.txt", data, "utf-8");
+}
+
+moviesData.forEach(function (movies) {
+  const { genre, title, rating, year } = movies;
   genre.forEach(function (movie) {
-    if (movie === search) {
-      searchMovieName = movie;
-
-      result.push({ title, year, rating });
+    if (inputStr === movie.toLocaleLowerCase()) {
+      movieName = movie;
+      resultsName.push({ title, year, rating });
+    }
+  });
+  genre.forEach(function (gen) {
+    if (topPicksByGenre[gen] === undefined) {
+      topPicksByGenre[gen] = { title: "", rating: 0 };
+    }
+    if (topPicksByGenre[gen].rating < movies.rating) {
+      topPicksByGenre[gen].title = movies.title;
+      topPicksByGenre[gen].rating = movies.rating;
     }
   });
 });
-let sortRating = data.sort(function (a, b) {
-  const one = a.rating;
-  const two = b.rating;
-  return two - one;
+
+appendtext(`
+
+  -----------------------------------------
+       MOVIE RECOMMENDATION ENGINE
+-----------------------------------------
+Search: ${movieName}
+
+Results:\n`);
+
+resultsName.forEach(function (result) {
+  const { title, year, rating } = result;
+  appendtext(`- ${title} (${year}) - ${rating}\n`);
 });
-function printTopRatings(sortRating) {
-  sortRating.forEach(function (movie) {
-    console.log(`${movie.title} - ${movie.rating}`);
-  });
+appendtext(`
+Top Picks by Genre:
+`);
+for (let gen in topPicksByGenre) {
+  const { title, rating } = topPicksByGenre[gen];
+  appendtext(`- ${gen}:${title} (${rating})\n`);
 }
-console.log(searchMovieName);
-result.forEach(function (element) {
-  const { title, year, rating } = element;
-  console.log(title, year, rating);
-});
-printTopRatings(sortRating);
